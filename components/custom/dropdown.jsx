@@ -15,6 +15,8 @@ const NavLinks = [
   'Travel & Hospitality',
   'AgriTech'
 ]
+
+const X=['Sart Your Journey Elevate Your Career.”']
 const CustomDropdown = ({ twoColumn, data, levelled }) => {
   
   const [open, setOpen] = useState(false);
@@ -38,6 +40,26 @@ const CustomDropdown = ({ twoColumn, data, levelled }) => {
             )}
           </DropdownMenuGroup>
         )}
+        { !twoColumn && !levelled && (
+  <DropdownMenuGroup className='w-full flex flex-col px-16'>
+    {data.content?.title && (
+      <span className='text-lg mb-6 font-bold'>{data.content.title}</span>
+    )}
+    <ul className='flex flex-col gap-4'>
+      {data.subLinks?.map(link => (
+        <li key={link.name} className='text-base font-normal'>
+          <Link
+            to={link?.to ? `/${link.to}` : ''}
+            className={`text-black ${!link.to && 'cursor-default'}`}
+          >
+            {link.name}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </DropdownMenuGroup>
+)}
+
         { twoColumn && !levelled && data.name !== 'What We Think' &&(
           <DropdownMenuGroup className='w-full flex flex-row gap-24 px-16'>
             <div className='flex flex-col w-1/2'>
@@ -65,6 +87,28 @@ const CustomDropdown = ({ twoColumn, data, levelled }) => {
         )}
                   { levelled && (
           <DropdownMenuGroup>
+            {/* {
+              data.levels?.map((level, i) => (
+                <div key={ i }>
+                  <div className='py-10'>
+                    { level.title && <span className='text-lg mb-3 font-bold'>{ level.title }</span> }
+                    <DropdownMenuItem key={ i } className='text-[17px] flex content-between items-start pl-0 leading-10 text-blue-700 font-normal focus:bg-transparent focus:text-blue-700 hover:text-blue-700 hover:bg-transparent flex-wrap' onClick={ () => setOpen(false) }>
+                      {
+                        level.links.map(link => (
+                          <Link to={ link?.to ? link.to : '' } className={ `w-[25%] max-w-[25%] ${ level.size === 'big' && 'text-3xl' } ${ !link.to && 'text-black cursor-default' }` } key={ link.name ? link.name : link }>{ link?.name ? link.name : link }</Link>
+                        ))
+                      }
+                    </DropdownMenuItem>
+                  </div>
+                  { (i < data.levels.length - 1) && <DropdownMenuSeparator className='bg-slate-300' /> }
+                </div>
+              ))
+            } */}
+            <p>{X}</p>
+          </DropdownMenuGroup>
+        ) }
+               { levelled && (
+          <DropdownMenuGroup>
             {
               data.levels?.map((level, i) => (
                 <div key={ i }>
@@ -82,6 +126,7 @@ const CustomDropdown = ({ twoColumn, data, levelled }) => {
                 </div>
               ))
             }
+            {/* <p>{X}</p> */}
           </DropdownMenuGroup>
         ) }
       </DropdownMenuContent>
