@@ -15,42 +15,70 @@ const Footer = ({ findJobs, subscription=true }) => {
           <Separator className='bg-gray-400' />
         </>
       ) }
-      <div className="flex flex-wrap justify-between underline text-gray-400 items-center py-8">
-        <div className="flex justify-between items-center flex-wrap lg:w-4/6 w-full">
-          <img src={ logo } alt="Logo Without Text" className="object-cover w-12 h-12" />
-          <p className="hover:text-white">ABOUT US</p>
-          <p className="hover:text-white">CONTACT US</p>
-          <p className="hover:text-white">CAREERS</p>
-          <p className="hover:text-white">LOCATIONS</p>
-        </div>
-        <div className="flex justify-between items-center lg:w-1/6 w-1/3 lg:mt-0 mt-6">
-          <div className="w-10 h-10 rounded-full border flex justify-center items-center hover:border-white hover:text-white cursor-pointer border-gray-400 bg-transparant">
-            <Linkedin className="w-5 h-5" />
+      <footer className="bg-gradient-to-r from-black via-gray-900 to-black text-white py-12 px-8 lg:px-44">
+        <div className="flex flex-col lg:flex-row justify-between items-center mb-10">
+          <div className="flex items-center mb-6 lg:mb-0">
+            <img src={logo} alt="Logo Without Text" className="w-16 h-16 mr-4 rounded-full shadow-lg" />
+            <div>
+              <h1 className="text-3xl font-bold tracking-wide">GradSculpt</h1>
+              <p className="text-lg text-gray-300">Shaping Futures, Empowering Talent</p>
+            </div>
           </div>
-          <div className="w-10 h-10 rounded-full border flex justify-center items-center hover:border-white hover:text-white cursor-pointer border-gray-400 bg-transparant">
-            <Twitter className="w-5 h-5" />
-          </div>
-          <div className="w-10 h-10 rounded-full border flex justify-center items-center hover:border-white hover:text-white cursor-pointer border-gray-400 bg-transparant">
-            <Facebook className="w-5 h-5" />
-          </div>
-          <div className="w-10 h-10 rounded-full border flex justify-center items-center hover:border-white hover:text-white cursor-pointer border-gray-400 bg-transparant">
-            <Youtube className="w-5 h-5" />
+          <div className="flex space-x-6">
+            <a href="#" className="hover:text-blue-400 transition"><Linkedin className="w-7 h-7" /></a>
+            <a href="#" className="hover:text-blue-400 transition"><Twitter className="w-7 h-7" /></a>
+            <a href="#" className="hover:text-blue-400 transition"><Facebook className="w-7 h-7" /></a>
+            <a href="#" className="hover:text-red-500 transition"><Youtube className="w-7 h-7" /></a>
           </div>
         </div>
-      </div>
-      <Separator className='bg-gray-400' />
-      <div className="flex justify-between underline text-xs flex-wrap text-gray-400 items-center pt-8">
-        <div className="flex justify-between items-center lg:w-3/6 w-full flex-wrap">
-          <p className="hover:text-white cursor-pointer">Privacy Statement</p>
-          <p className="hover:text-white cursor-pointer">Terms & Conditions</p>
-          <p className="hover:text-white cursor-pointer">Cookie Policy/Settings</p>
-          <p className="hover:text-white cursor-pointer">Accessibility Statement</p>
-          <p className="hover:text-white cursor-pointer">Sitemap</p>
+        <Separator className='bg-gray-700 mb-8' />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10 text-gray-300">
+          <div>
+            <h2 className="font-semibold text-lg mb-4 text-white">Company</h2>
+            <ul className="space-y-2">
+              <li><a href="#" className="hover:text-blue-400">About Us</a></li>
+              <li><a href="#" className="hover:text-blue-400">Careers</a></li>
+              <li><a href="#" className="hover:text-blue-400">Contact Us</a></li>
+              <li><a href="#" className="hover:text-blue-400">Locations</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="font-semibold text-lg mb-4 text-white">Resources</h2>
+            <ul className="space-y-2">
+              <li><a href="#" className="hover:text-blue-400">Blog</a></li>
+              <li><a href="#" className="hover:text-blue-400">Events</a></li>
+              <li><a href="#" className="hover:text-blue-400">Webinars</a></li>
+              <li><a href="#" className="hover:text-blue-400">Help Center</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="font-semibold text-lg mb-4 text-white">Legal</h2>
+            <ul className="space-y-2">
+              <li><a href="#" className="hover:text-blue-400">Privacy Statement</a></li>
+              <li><a href="#" className="hover:text-blue-400">Terms & Conditions</a></li>
+              <li><a href="#" className="hover:text-blue-400">Cookie Policy</a></li>
+              <li><a href="#" className="hover:text-blue-400">Accessibility</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="font-semibold text-lg mb-4 text-white">Subscribe</h2>
+            <form className="flex flex-col space-y-3">
+              <input type="email" placeholder="Your email" className="px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-400" />
+              <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded font-semibold transition">Subscribe</button>
+            </form>
+          </div>
         </div>
-        <div className="flex justify-end items-center lg:w-2/6 w-full">
-          <p>© 2023 Accenture. All Rights Reserved.</p>
+        <Separator className='bg-gray-700 mb-8' />
+        <div className="flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+          <div className="flex space-x-4 mb-4 md:mb-0">
+            <a href="#" className="hover:text-blue-400">Sitemap</a>
+            <a href="#" className="hover:text-blue-400">Accessibility Statement</a>
+          </div>
+          <div>
+            <p>© 2023 GradSculpt. All Rights Reserved.</p>
+          </div>
         </div>
-      </div>
+      </footer>
     </div>
   );
 }
