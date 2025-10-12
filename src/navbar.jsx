@@ -36,7 +36,8 @@ const NavBar = ({ careers=false, login=false, job=false }) => {
           width > 1024 ? (
             <>
               <CustomDropdown key={ 1 } twoColumn={ true } data={ NavLinks[0] } levelled={ false } />
-              <CustomDropdown key={ 2 } twoColumn={ false } data={ NavLinks[1] } levelled={ false } />
+              {/* <CustomDropdown key={ 2 } twoColumn={ false } data={ NavLinks[1] } levelled={ false } /> */}
+              <CustomDropdown key={ 2 } twoColumn data={NavLinks[1]} />
               <CustomDropdown key={ 3 } twoColumn={ false } data={ NavLinks[2] } levelled={ false } />
               <CustomDropdown key={ 4 } twoColumn={ false } data={ NavLinks[3] } levelled={ true } />
               <CustomDropdown key={ 5 } twoColumn={ false } data={ NavLinks[4] } levelled={ true } />
@@ -62,7 +63,7 @@ const NavBar = ({ careers=false, login=false, job=false }) => {
                             <span className='text-sm mb-3 font-normal'>{ navLink.content.contentDescription }</span>
                           </div>
                         ) }
-                        { navLink.subLinks.map((link, i) => (
+                        { navLink.subLinks?.map((link, i) => (
                           <div className='text-base font-normal' key={ i }>
                             <div className="p-4">
                               <Link to={ link?.to ? link.to : '' } key={ link.name ? link.name : link }>{ link?.name ? link.name : link }</Link>

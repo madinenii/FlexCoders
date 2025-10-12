@@ -28,12 +28,22 @@ const CustomDropdown = ({ twoColumn, data, levelled }) => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className='w-screen flex py-10 px-32 -mt-1'>
-        { twoColumn && !levelled && (
+        { twoColumn && !levelled && data.name === 'What We Think' && (
+          <DropdownMenuGroup className='w-full flex flex-col px-16'>
+            {data.content.description && (
+              <span className='text-4xl font-bold mb-4'>{data.content.description}</span>
+            )}
+            {data.content.contentDescription && (
+              <span className='text-2xl font-normal'>{data.content.contentDescription}</span>
+            )}
+          </DropdownMenuGroup>
+        )}
+        { twoColumn && !levelled && data.name !== 'What We Think' &&(
           <DropdownMenuGroup className='w-full flex flex-row gap-24 px-16'>
             <div className='flex flex-col w-1/2'>
               <span className='text-lg mb-6 font-bold'>{data.content.title}</span>
               <ul className='flex flex-col gap-4'>
-                {data.subLinks.map(link => (
+                {data.subLinks?.map(link => (
                   <li key={link.name} className='text-base font-normal'>
                     <Link to={link?.to ? `/${link.to}` : ''} className={`text-black ${!link.to && 'cursor-default'}`}>{link.name}</Link>
                   </li>
@@ -44,11 +54,6 @@ const CustomDropdown = ({ twoColumn, data, levelled }) => {
               <span className='text-lg mb-6 font-bold'>Industries</span>
               <ul className='flex flex-col gap-4'>
                 {console.log(data,'data')}
-                {/* {data?.[1]?.subLinks?.map((industry, idx) => (
-                  <li key={idx} className='text-base font-normal'>
-                    <span className='text-black'>{industry}</span>
-                  </li>
-                ))} */}
                 {NavLinks.map((industry, idx) => (
   <li key={idx} className='text-base font-normal'>
     <span className='text-black'>{industry}</span>
@@ -58,7 +63,7 @@ const CustomDropdown = ({ twoColumn, data, levelled }) => {
             </div>
           </DropdownMenuGroup>
         )}
-        { levelled && (
+                  { levelled && (
           <DropdownMenuGroup>
             {
               data.levels?.map((level, i) => (

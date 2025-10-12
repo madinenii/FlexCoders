@@ -22,6 +22,11 @@ export const NavLinks = [
   },
   {
     name: 'What We Think',
+    content: {
+      // title: 'Building Tomorrow With Todays Code',
+      description: 'Building Tomorrow With Todays Code',
+      contentDescription: 'Discover how our research, innovation, and real-world success stories empower businesses to turn change into growth.'
+    },
     subLinks: [
       'Aerospace and Defense',
       'Automotive',
@@ -44,28 +49,22 @@ export const NavLinks = [
       'Utilities'
     ]
   },
-   {
+  {
     name: 'Topic',
+    content: {
+      title: 'Topic',
+    },
     subLinks: [
-      'Aerospace and Defense',
-      'Automotive',
-      'Banking',
-      'Capital Markets',
-      'Chemicals',
-      'Communications and Media',
-      'Consumer Goods and Services',
-      'Energy',
-      'Health',
-      'High Tech',
-      'Industrial',
-      'Insurance',
-      'Life Sciences',
-      'Natural Resources',
-      'Public Service',
-      'Retail',
-      'Software and Platforms',
-      'Travel',
-      'Utilities'
+      { name: 'Cloud & DevOps Services', to: '' },
+      { name: 'Software Development', to: '' },
+      { name: 'Mobile App Development', to: '' },
+      { name: 'Web Development', to: '' },
+      { name: 'It Consulting & Support', to: '' },
+      { name: 'Cybersecurity Services', to: '' },
+      { name: 'Digital Marketing & Branding', to: '' },
+      { name: 'Data & Analytics', to: '' },
+      { name: 'Ai & Automation', to: '' },
+      { name: 'Training &b EdTech Services', to: '' }
     ]
   },
   {
