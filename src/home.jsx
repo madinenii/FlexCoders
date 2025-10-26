@@ -2,6 +2,7 @@ import image1 from '../src/assets/images/image1.jpeg';
 import image2 from '../src/assets/images/image2.jpeg';
 import image3 from '../src/assets/images/image3.jpeg';
 import heroVideo from './assets/videos/hero.mp4';
+import Bg from './assets/videos/Bg.mp4';
 import { ChevronRight, MoveRight } from 'lucide-react';
 import { CarouselSection } from './carousel';
 import dancingGirlVideo from './assets/videos/Accenture-dancing-girl.mp4';
@@ -61,10 +62,10 @@ const Home = () => {
   const [revealTextVisible, setRevealTextVisible] = useState(false);
   
   useEffect(() => {
-    const containerTop = imageReveal.current.offsetTop;
-    const scaleRatio = Math.pow(10, 4/imageReveal.current.clientHeight);
-    const videoScaleRatio = Math.pow(10, 4/videoReveal.current.clientHeight);
-    const videoTop = videoReveal.current.offsetTop;
+    // const containerTop = imageReveal.current.offsetTop;
+    // const scaleRatio = Math.pow(10, 4/imageReveal.current.clientHeight);
+    // const videoScaleRatio = Math.pow(10, 4/videoReveal.current.clientHeight);
+    // const videoTop = videoReveal.current.offsetTop;
     
     const handleScroll = () => {
       if (window.scrollY > containerTop && window.scrollY < containerTop + imageReveal.current.getBoundingClientRect().height) {
@@ -103,12 +104,12 @@ const Home = () => {
   return (
     <>
       <NavBar />
-      <IndexSection data={ indexData } />
+      {/* <IndexSection data={ indexData } /> */}
       <div className="overflow-hidden">
-        <video muted loop autoPlay src={ heroVideo } className='min-h-screen min-w-full h-[80vh] object-cover' />
+        <video muted loop autoPlay src={ Bg } className='min-h-screen min-w-full h-[80vh] object-cover' />
       </div>
-      <CarouselSection />
-      <div className="w-full xl:h-[160vh] mt-12" ref={ imageReveal }>
+      {/* <CarouselSection /> */}
+      {/* <div className="w-full xl:h-[160vh] mt-12" ref={ imageReveal }>
         <div className='h-[90vh] overflow-hidden xl:sticky xl:top-32 bg-white flex xl:flex-row flex-col justify-center items-start'>
           <ChevronRight className='w-[45rem] h-[45rem] xl:absolute origin-[62%_50%]' ref={ title } />
           <div className='relative'>
@@ -127,9 +128,9 @@ const Home = () => {
             ) }
           </div>
         </div>
-      </div>
-      <InsightsSection data={ insightCardData } centered={ true } title='Insights to help you stay ahead of change' description='From insights to action, the path to 360° value starts here.' />
-      <div className="w-full xl:h-[160vh] mt-12" ref={ videoReveal }>
+      </div> */}
+      {/* <InsightsSection data={ insightCardData } centered={ true } title='Insights to help you stay ahead of change' description='From insights to action, the path to 360° value starts here.' /> */}
+      {/* <div className="w-full xl:h-[160vh] mt-12" ref={ videoReveal }>
         <div className={ `flex xl:flex-row flex-col justify-center items-start w-full h-[90vh] overflow-hidden xl:sticky xl:top-[120px] bg-white` } ref={ scaleVideo } >
           <ChevronRight className={ `w-[45rem] h-[45rem] border-5 border-black xl:absolute origin-[62%_50%] scale-[25]` } ref={ videoTitle } />
           <div className="relative">
@@ -148,7 +149,7 @@ const Home = () => {
             ) }
           </div>
         </div>
-      </div>
+      </div> */}
       <Footer />
     </>
   );

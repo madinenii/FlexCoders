@@ -79,7 +79,7 @@ const JobsSection = ({ children, background, title, description, explore=false, 
         </div>
       ) }
       <div className="flex justify-between flex-wrap">
-        { jobs.map(job => (
+        { Array.isArray(jobs) && jobs.map(job => (
           <JobCard listView={ listView } key={ job._id } data={ job } border={ !background } />
         )) }
       </div>

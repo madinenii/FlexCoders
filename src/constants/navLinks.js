@@ -68,7 +68,7 @@ export const NavLinks = [
     ]
   },
   {
-    name: 'Careers',
+    name: 'Careers At GradSculpt',
     subLinks: [],
     levels: [
       {
@@ -82,7 +82,8 @@ export const NavLinks = [
       {
         title: 'JOIN US',
         links: [
-          { name: 'Search and Apply', to: '/careers/job_search' },
+          // { name: 'Search and Apply', to: '/careers/job_search' },
+          {name:'For Freshers & Early Career Professionals', to:'/careers/job_search'},
           { name: 'Experienced Professionals', to: '/careers/job_search' },
           { name: 'Training & Development', to: '/careers/job_search' },
           { name: 'Work Environment', to: '/careers/job_search' },
@@ -91,14 +92,12 @@ export const NavLinks = [
       {
         title: 'EXPLORE JOBS',
         links: [
-          'Search Jobs by Areas of Expertise',
-          'Consulting Jobs',
-          'Corporate Jobs',
-          'Digital Jobs',
-          'Operations Jobs',
-          'Strategy Jobs',
-          'Technology Jobs',
-          'Industry X'
+          { name: 'Full Stack Development', to: '/careers/fullstack' },
+          { name: 'Data Analytics & AI', to: '/careers/data-analytics' },
+          { name: 'Cloud & DevOps Engineering', to: '/careers/devops' },
+          { name: 'UI/UX Design & Frontend', to: '/careers/uiux' },
+          { name: 'Software Testing & QA', to: '/careers/qa' },
+          { name: 'Product Management & Strategy', to: '/careers/product' }
         ]
       },
     ]
@@ -106,39 +105,39 @@ export const NavLinks = [
   {
     name: 'About GradSculpt',
     subLinks: [],
-    levels: [
-      {
-        title: 'WHO WE ARE',
-        links: [
-          'About Accenture',
-          'Leadership',
-          'How We Work with Clients',
-          'Case Studies',
-          'Newsroom',
-          'Investor Relations',
-          'Inclusion & Diversity',
-          'Sustainability'
-        ]
-      },
-      {
-        title: "HOW WE'RE ORGANIZED",
-        links: [
-          'Strategy & Consulting',
-          'Song',
-          'Technology',
-          'Operations',
-          'Industry X'
-        ]
-      },
-      {
-        title: 'IN INDIA',
-        links: [
-          'About Accenture in India',
-          'Inclusion & Diversity in India',
-          'Accelerating equality with Vaahini',
-          'Corporate Citizenship in India'
-        ]
-      },
-    ]
+    // levels: [
+    //   {
+    //     title: 'WHO WE ARE',
+    //     links: [
+    //       'About Accenture',
+    //       'Leadership',
+    //       'How We Work with Clients',
+    //       'Case Studies',
+    //       'Newsroom',
+    //       'Investor Relations',
+    //       'Inclusion & Diversity',
+    //       'Sustainability'
+    //     ]
+    //   },
+    //   {
+    //     title: "HOW WE'RE ORGANIZED",
+    //     links: [
+    //       'Strategy & Consulting',
+    //       'Song',
+    //       'Technology',
+    //       'Operations',
+    //       'Industry X'
+    //     ]
+    //   },
+    //   {
+    //     title: 'IN INDIA',
+    //     links: [
+    //       'About Accenture in India',
+    //       'Inclusion & Diversity in India',
+    //       'Accelerating equality with Vaahini',
+    //       'Corporate Citizenship in India'
+    //     ]
+    //   },
+    // ]
   }
 ];

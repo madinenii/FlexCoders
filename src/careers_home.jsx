@@ -129,7 +129,37 @@ const CareersHome = () => {
   return (
     <>
       <NavBar careers={ true } />
-      <Banner buttons={ true } data={ bannerData }>
+      <div className="max-w-3xl mx-auto py-12 px-4 mt-20">
+        <h1 className="text-3xl font-bold mb-2">Innovate. Build. Grow. Together.</h1>
+        <p className="mb-2 text-lg">At GradSculpt, we’re not just creating software — we’re shaping the digital future.</p>
+        <p className="mb-2 text-lg">We bring together passionate people and powerful technology to solve real-world challenges.</p>
+        <p className="mb-6 text-lg">If you’re curious, driven, and ready to grow, your journey starts here.</p>
+        <h2 className="text-xl font-semibold mt-8 mb-2">💫 Why Work With Us</h2>
+        <ul className="list-disc ml-6 mb-4 text-base">
+          <li><span className="font-semibold">Real Impact:</span> Work on projects that matter — from enterprise apps to AI solutions.</li>
+          <li><span className="font-semibold">Continuous Growth:</span> Upskill with training, mentorship, and certifications.</li>
+          <li><span className="font-semibold">Open Culture:</span> Collaborate, share ideas, and learn every day.</li>
+          <li><span className="font-semibold">Tech-First Environment:</span> Work with the latest frameworks, tools, and cloud platforms.</li>
+        </ul>
+        <h2 className="text-xl font-semibold mt-8 mb-2">🚀 Career Paths</h2>
+        <div className="mb-2 font-semibold">🧩 For Freshers & Early Career Professionals</div>
+        <ul className="list-disc ml-6 mb-2 text-base">
+          <li>Kickstart your journey with hands-on experience and guided learning.</li>
+          <li>Dedicated onboarding & mentorship</li>
+          <li>Real-time projects from day one</li>
+          <li>Certifications & growth roadmap</li>
+          <li>Path: Trainee → Developer → Senior Developer → Team Lead</li>
+        </ul>
+        <div className="mb-2 font-semibold">🧠 For Experienced Professionals</div>
+        <ul className="list-disc ml-6 text-base">
+          <li>Bring your expertise — and take the lead.</li>
+          <li>Ownership of full-cycle projects</li>
+          <li>Mentor junior developers</li>
+          <li>Design architecture & optimize delivery</li>
+          <li>Path: Senior Developer → Tech Lead → Architect → Delivery Head</li>
+        </ul>
+      </div>
+      {/* <Banner buttons={ true } data={ bannerData }>
         <h1 className="text-6xl font-extrabold mb-6 leading-3">Discover your</h1>
         <h1 className="text-6xl font-extrabold mb-6">new career</h1>
       </Banner>
@@ -195,9 +225,9 @@ const CareersHome = () => {
         article={ true }
         articleData={ articleData2 }
         articleVariant='2'
-      />
+      /> */}
       <Footer findJobs={ true } />
-      <FindJobs />
+      {/* <FindJobs /> */}
     </>
   );
 }

@@ -16,6 +16,12 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { setUser } from './slices/userSlice';
 import axios from 'axios';
 const ApplyPage = lazy(() => import('./applyPage'));
+const CareersFullstack = lazy(() => import('./careers_fullstack'));
+const CareersDataAnalytics = lazy(() => import('./careers_data_analytics'));
+const CareersDevops = lazy(() => import('./careers_devops'));
+const CareersUiux = lazy(() => import('./careers_uiux'));
+const CareersQa = lazy(() => import('./careers_qa'));
+const CareersProduct = lazy(() => import('./careers_product'));
 
 const tokenExpired = async function () {
   const token = localStorage.getItem('token');
@@ -69,6 +75,13 @@ function App() {
           <Route path='/signup' element={ <SignupPage /> } />
           <Route path='/candidate' element={ <CandidatePage /> } />
           <Route path='/job/:jobId/apply' element={ <ApplyPage /> } />
+          {/* Career Tech Domain Subpages */}
+          <Route path='/careers/fullstack' element={ <CareersFullstack /> } />
+          <Route path='/careers/data-analytics' element={ <CareersDataAnalytics /> } />
+          <Route path='/careers/devops' element={ <CareersDevops /> } />
+          <Route path='/careers/uiux' element={ <CareersUiux /> } />
+          <Route path='/careers/qa' element={ <CareersQa /> } />
+          <Route path='/careers/product' element={ <CareersProduct /> } />
         </Routes>
       </Suspense>
       </>
