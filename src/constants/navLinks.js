@@ -74,7 +74,7 @@ export const NavLinks = [
       {
         links: [
           { name: 'Careers Home', to: '/careers' },
-          { name: 'Search Jobs', to: '/careers/job_search' }
+          // { name: 'Search Jobs', to: '/careers/job_search' }
         ],
         size: 'big',
         image: 'arrow'
@@ -83,10 +83,10 @@ export const NavLinks = [
         title: 'JOIN US',
         links: [
           // { name: 'Search and Apply', to: '/careers/job_search' },
-          {name:'For Freshers & Early Career Professionals', to:'/careers/job_search'},
-          { name: 'Experienced Professionals', to: '/careers/job_search' },
-          { name: 'Training & Development', to: '/careers/job_search' },
-          { name: 'Work Environment', to: '/careers/job_search' },
+          {name:'For Freshers & Early Career Professionals', to:'/careers/freshers_page'},
+          { name: 'Experienced Professionals', to: '/careers/experienced_page' },
+          // { name: 'Training & Development', to: '/careers/job_search' },
+          // { name: 'Work Environment', to: '/careers/job_search' },
         ]
       },
       {

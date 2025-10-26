@@ -15,6 +15,8 @@ const CandidatePage = lazy(() => import('./candidate_page'));
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { setUser } from './slices/userSlice';
 import axios from 'axios';
+import FresherPage from './fresher_page';
+import ExperiencePage from './experienced_page';
 const ApplyPage = lazy(() => import('./applyPage'));
 const CareersFullstack = lazy(() => import('./careers_fullstack'));
 const CareersDataAnalytics = lazy(() => import('./careers_data_analytics'));
@@ -69,6 +71,8 @@ function App() {
           <Route path='/insights/5g-index' element={ <FiveGIndex /> } />
           <Route path='/careers' element={ <CareersHome /> } />
           <Route path='/careers/job_search' element={ <JobSearch /> } />
+          <Route path='/careers/freshers_page' element={ <FresherPage /> } />
+          <Route path='/careers/experienced_page' element={ <ExperiencePage /> } />
           <Route path='/careers/job/:jobId' element={ <JobDetails /> } />
           <Route path='/login' element={ <Login /> } />
           <Route path='/login/candidate' element={ <LoginCandidate /> } />

@@ -26,6 +26,137 @@ import FindJobs from '@/components/custom/find_jobs';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
+
+const WhyWorkWithUsSection = () => {
+  const reasons = [
+    {
+      icon: '✨', // You could replace these with actual image imports or SVG icons
+      title: 'Real Impact',
+      description: 'Work on projects that matter — from enterprise apps to AI solutions.',
+    },
+    {
+      icon: '📈',
+      title: 'Continuous Growth',
+      description: 'Upskill with training, mentorship, and certifications.',
+    },
+    {
+      icon: '🤝',
+      title: 'Open Culture',
+      description: 'Collaborate, share ideas, and learn every day.',
+    },
+    {
+      icon: '💻',
+      title: 'Tech-First Environment',
+      description: 'Work with the latest frameworks, tools, and cloud platforms.',
+    },
+  ];
+
+  return (
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-4xl font-extrabold text-center text-[#A100FF] mb-12">
+          💫 Why Work With Us
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {reasons.map((reason, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-8 text-center flex flex-col items-center"
+            >
+              <div className="text-5xl mb-4" role="img" aria-label={reason.title}>
+                {reason.icon}
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                {reason.title}
+              </h3>
+              <p className="text-gray-600">{reason.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const CareerPathsSection = () => {
+  const paths = [
+    {
+      title: '🧩 For Freshers & Early Career Professionals',
+      description: 'Kickstart your journey with hands-on experience and guided learning.',
+      features: [
+        'Dedicated onboarding & mentorship',
+        'Real-time projects from day one',
+        'Certifications & growth roadmap',
+      ],
+      roadmap: 'Trainee → Developer → Senior Developer → Team Lead',
+    },
+    {
+      title: '🧠 For Experienced Professionals',
+      description: 'Bring your expertise — and take the lead.',
+      features: [
+        'Ownership of full-cycle projects',
+        'Mentor junior developers',
+        'Design architecture & optimize delivery',
+      ],
+      roadmap: 'Senior Developer → Tech Lead → Architect → Delivery Head',
+    },
+  ];
+
+  return (
+    <section className="py-16 bg-white">
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-4xl font-extrabold text-center text-[#A100FF] mb-12">
+          🚀 Career Paths
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {paths.map((path, index) => (
+            <div
+              key={index}
+              className="bg-gradient-to-br from-purple-50 to-indigo-100 rounded-xl shadow-xl p-10 flex flex-col justify-between transform hover:scale-105 transition-transform duration-300"
+            >
+              <div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  {path.title}
+                </h3>
+                <p className="text-lg text-gray-700 mb-6">{path.description}</p>
+                <ul className="list-none space-y-3 mb-8">
+                  {path.features.map((feature, i) => (
+                    <li key={i} className="flex items-center text-gray-800 text-lg">
+                      <svg
+                        className="w-6 h-6 text-[#A100FF] mr-3 flex-shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        ></path>
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-auto pt-6 border-t border-purple-200">
+                <h4 className="text-lg font-semibold text-purple-700 mb-2">Roadmap:</h4>
+                <p className="text-xl font-mono text-gray-800 bg-purple-200 p-3 rounded-md inline-block">
+                  {path.roadmap}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// --- Original component data and structure ---
+
 const bannerData = {
   video: bannerVideo,
   tagLine: 'Explore opportunities',
@@ -129,36 +260,20 @@ const CareersHome = () => {
   return (
     <>
       <NavBar careers={ true } />
-      <div className="max-w-3xl mx-auto py-12 px-4 mt-20">
-        <h1 className="text-3xl font-bold mb-2">Innovate. Build. Grow. Together.</h1>
-        <p className="mb-2 text-lg">At GradSculpt, we’re not just creating software — we’re shaping the digital future.</p>
-        <p className="mb-2 text-lg">We bring together passionate people and powerful technology to solve real-world challenges.</p>
-        <p className="mb-6 text-lg">If you’re curious, driven, and ready to grow, your journey starts here.</p>
-        <h2 className="text-xl font-semibold mt-8 mb-2">💫 Why Work With Us</h2>
-        <ul className="list-disc ml-6 mb-4 text-base">
-          <li><span className="font-semibold">Real Impact:</span> Work on projects that matter — from enterprise apps to AI solutions.</li>
-          <li><span className="font-semibold">Continuous Growth:</span> Upskill with training, mentorship, and certifications.</li>
-          <li><span className="font-semibold">Open Culture:</span> Collaborate, share ideas, and learn every day.</li>
-          <li><span className="font-semibold">Tech-First Environment:</span> Work with the latest frameworks, tools, and cloud platforms.</li>
-        </ul>
-        <h2 className="text-xl font-semibold mt-8 mb-2">🚀 Career Paths</h2>
-        <div className="mb-2 font-semibold">🧩 For Freshers & Early Career Professionals</div>
-        <ul className="list-disc ml-6 mb-2 text-base">
-          <li>Kickstart your journey with hands-on experience and guided learning.</li>
-          <li>Dedicated onboarding & mentorship</li>
-          <li>Real-time projects from day one</li>
-          <li>Certifications & growth roadmap</li>
-          <li>Path: Trainee → Developer → Senior Developer → Team Lead</li>
-        </ul>
-        <div className="mb-2 font-semibold">🧠 For Experienced Professionals</div>
-        <ul className="list-disc ml-6 text-base">
-          <li>Bring your expertise — and take the lead.</li>
-          <li>Ownership of full-cycle projects</li>
-          <li>Mentor junior developers</li>
-          <li>Design architecture & optimize delivery</li>
-          <li>Path: Senior Developer → Tech Lead → Architect → Delivery Head</li>
-        </ul>
+      
+      {/* Introduction Section */}
+      <div className="max-w-3xl mx-auto py-12 px-4 mt-20 text-center">
+        <h1 className="text-5xl font-extrabold mb-4 text-[#A100FF]">Innovate. Build. Grow. Together.</h1>
+        <p className="mb-4 text-xl text-gray-700">At GradSculpt, we’re not just creating software — we’re shaping the digital future.</p>
+        <p className="mb-4 text-xl text-gray-700">We bring together passionate people and powerful technology to solve real-world challenges.</p>
+        <p className="mb-8 text-xl text-gray-700">If you’re curious, driven, and ready to grow, your journey starts here.</p>
       </div>
+
+      {/* New sections for "Why Work With Us" and "Career Paths" */}
+      <WhyWorkWithUsSection />
+      <CareerPathsSection />
+
+      {/* Rest of your existing (commented-out) components */}
       {/* <Banner buttons={ true } data={ bannerData }>
         <h1 className="text-6xl font-extrabold mb-6 leading-3">Discover your</h1>
         <h1 className="text-6xl font-extrabold mb-6">new career</h1>
