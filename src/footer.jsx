@@ -1,5 +1,5 @@
 import { Separator } from "@/components/ui/separator";
-import { Facebook, Linkedin, MoveRight, Twitter, Youtube } from "lucide-react";
+import { Facebook, Instagram, Linkedin, MoveRight, Twitter, X, Youtube } from "lucide-react";
 import logo from '../src/assets/images/logo_without_text.svg';
 
 const Footer = ({ findJobs, subscription=true }) => {
@@ -25,10 +25,11 @@ const Footer = ({ findJobs, subscription=true }) => {
             </div>
           </div>
           <div className="flex space-x-6">
-            <a href="#" className="hover:text-blue-400 transition"><Linkedin className="w-7 h-7" /></a>
-            <a href="#" className="hover:text-blue-400 transition"><Twitter className="w-7 h-7" /></a>
-            <a href="#" className="hover:text-blue-400 transition"><Facebook className="w-7 h-7" /></a>
-            <a href="#" className="hover:text-red-500 transition"><Youtube className="w-7 h-7" /></a>
+            {/* <a href="#" className="hover:text-blue-400 transition"><Linkedin className="w-7 h-7" /></a> */}
+            <a href="https://x.com/GradSculpt_pvt" className="hover:text-blue-400 transition"><Twitter className="w-7 h-7" /></a>
+            <a href="https://www.instagram.com/gradsculpt.pvt.ltd?igsh=aGtlN3JxdnFwa2k1" className="hover:text-blue-400 transition"><Instagram className="w-7 h-7" /></a>
+            {/* <a href="#" className="hover:text-blue-400 transition"><Facebook className="w-7 h-7" /></a> */}
+            {/* <a href="#" className="hover:text-red-500 transition"><Youtube className="w-7 h-7" /></a> */}
           </div>
         </div>
         <Separator className='bg-gray-700 mb-8' />

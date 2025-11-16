@@ -132,7 +132,7 @@ const CareersFullstack = () => (
               href="mailto:careers@gradsculpt.com" 
               className="inline-block bg-[#A100FF] hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 text-lg shadow-lg"
             >
-              📬 Apply Now @ GradSculpt
+              📬 Apply Now | Mail: careers@gradsculpt.com
             </a>
           </div>
         </div>
