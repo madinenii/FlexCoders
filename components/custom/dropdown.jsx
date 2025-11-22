@@ -2,7 +2,6 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem,
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 
 const NavLinks = [
   'EdTech',
@@ -19,12 +18,10 @@ const NavLinks = [
 const X=['Sart Your Journey Elevate Your Career.”']
 const CustomDropdown = ({ twoColumn, data, levelled }) => {
   
-  const [open, setOpen] = useState(false);
-  
   return (
-    <DropdownMenu open={ open }>
+    <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant='ghost' className='flex content-between data-[state=open]:pointer-events-auto h-16 hover:bg-transparent focus:bg-transparent hover:border-b-4 border-black rounded-none transition-all' onClick={ () => setOpen(open => !open) }>
+        <Button variant='ghost' className='flex content-between data-[state=open]:pointer-events-auto h-16 hover:bg-transparent focus:bg-transparent hover:border-b-4 border-black rounded-none transition-all'>
           <p className='text-base font-normal mr-2'>{ data.name }</p>
           <ChevronDown className='w-4 h-4' />
         </Button>

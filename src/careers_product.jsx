@@ -1,4 +1,5 @@
 import React from 'react';
+import NavBar from './navbar';
     
 // --- Reusable Feature Card Component ---
 const FeatureCard = ({ icon, title, children }) => (
@@ -43,6 +44,8 @@ const growthPath = [
 ];
 
 const CareersProduct = () => (
+  <>
+  <NavBar />
   <div className="py-16 bg-indigo-50">
     <div className="max-w-6xl mx-auto px-4">
       {/* 1. Header and Tagline */}
@@ -145,6 +148,7 @@ const CareersProduct = () => (
       </div>
     </div>
   </div>
+</>
 );
 
 export default CareersProduct;
