@@ -1,6 +1,6 @@
 import { Separator } from "@/components/ui/separator";
 import { Facebook, Instagram, Linkedin, MoveRight, Twitter, X, Youtube } from "lucide-react";
-import logo from '../src/assets/images/logo_without_text.svg';
+import logo from '../src/assets/images/logo.png';
 
 const Footer = ({ findJobs, subscription=true }) => {
   return (
@@ -18,7 +18,7 @@ const Footer = ({ findJobs, subscription=true }) => {
       <footer className="bg-gradient-to-r from-black via-gray-900 to-black text-white py-12 px-8 lg:px-44">
         <div className="flex flex-col lg:flex-row justify-between items-center mb-10">
           <div className="flex items-center mb-6 lg:mb-0">
-            {/* <img src={logo} alt="Logo Without Text" className="w-16 h-16 mr-4 rounded-full shadow-lg" /> */}
+            <img src={logo} alt="Logo Without Text" className="w-16 h-16 mr-4 rounded-full shadow-lg" />
             <div>
               <h1 className="text-3xl font-bold tracking-wide">GradSculpt</h1>
               <p className="text-lg text-gray-300">Shaping Futures, Empowering Talent</p>
