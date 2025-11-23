@@ -24,11 +24,20 @@ const CareersDevops = lazy(() => import('./careers_devops'));
 const CareersUiux = lazy(() => import('./careers_uiux'));
 const CareersQa = lazy(() => import('./careers_qa'));
 const CareersProduct = lazy(() => import('./careers_product'));
+const CloudDevOpsServices = lazy(() => import('./cloud_devops_services'));
+import SoftwareDevelopment from './software_development';
+import MobileAppDevelopment from './mobile_app_development';
+import WebDevelopment from './web_development';
+import ITConsultingSupport from './it_consulting_support';
+import CybersecurityServices from './cybersecurity_services';
+import DigitalMarketingBranding from './digital_marketing_branding';
+import DataAnalytics from './data_analytics';
+import AiAutomation from './ai_automation';
 
 const tokenExpired = async function () {
   const token = localStorage.getItem('token');
   const res = await axios({
-    url: import.meta.env.VITE_ENVIRONMENT === 'development' ? `${ import.meta.env.VITE_DEV_BASE_URL }/users/jwtExpired` : `${ import.meta.env.VITE_PROD_BASE_URL }/users/jwtExpired`,
+    url: import.meta.env.VITE_ENVIRONMENT === 'development' ? `${import.meta.env.VITE_DEV_BASE_URL}/users/jwtExpired` : `${import.meta.env.VITE_PROD_BASE_URL}/users/jwtExpired`,
     method: 'POST',
     data: {
       token
@@ -40,7 +49,7 @@ const tokenExpired = async function () {
 function App() {
 
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
     const token = localStorage.getItem('token');
@@ -51,7 +60,7 @@ function App() {
         else dispatch(setUser({ user, token }));
       });
     }
-    
+
     const handleResize = () => {
       dispatch(setWidth(window.innerWidth))
     }
@@ -61,33 +70,42 @@ function App() {
   }, []);
 
   const queryClient = new QueryClient();
-  
+
   return (
-    <QueryClientProvider client={ queryClient }>
+    <QueryClientProvider client={queryClient}>
       <>
-      <Suspense>
-        <Routes>
-          <Route index path='/' element={ <Home /> } />
-          <Route path='/insights/5g-index' element={ <FiveGIndex /> } />
-          <Route path='/careers' element={ <CareersHome /> } />
-          <Route path='/careers/job_search' element={ <JobSearch /> } />
-          <Route path='/careers/freshers_page' element={ <FresherPage /> } />
-          <Route path='/careers/experienced_page' element={ <ExperiencePage /> } />
-          <Route path='/careers/job/:jobId' element={ <JobDetails /> } />
-          <Route path='/login' element={ <Login /> } />
-          <Route path='/login/candidate' element={ <LoginCandidate /> } />
-          <Route path='/signup' element={ <SignupPage /> } />
-          <Route path='/candidate' element={ <CandidatePage /> } />
-          <Route path='/job/:jobId/apply' element={ <ApplyPage /> } />
-          {/* Career Tech Domain Subpages */}
-          <Route path='/careers/fullstack' element={ <CareersFullstack /> } />
-          <Route path='/careers/data-analytics' element={ <CareersDataAnalytics /> } />
-          <Route path='/careers/devops' element={ <CareersDevops /> } />
-          <Route path='/careers/uiux' element={ <CareersUiux /> } />
-          <Route path='/careers/qa' element={ <CareersQa /> } />
-          <Route path='/careers/product' element={ <CareersProduct /> } />
-        </Routes>
-      </Suspense>
+        <Suspense>
+          <Routes>
+            <Route index path='/' element={<Home />} />
+            <Route path='/insights/5g-index' element={<FiveGIndex />} />
+            <Route path='/careers' element={<CareersHome />} />
+            <Route path='/careers/job_search' element={<JobSearch />} />
+            <Route path='/careers/freshers_page' element={<FresherPage />} />
+            <Route path='/careers/experienced_page' element={<ExperiencePage />} />
+            <Route path='/careers/job/:jobId' element={<JobDetails />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/login/candidate' element={<LoginCandidate />} />
+            <Route path='/signup' element={<SignupPage />} />
+            <Route path='/candidate' element={<CandidatePage />} />
+            <Route path='/job/:jobId/apply' element={<ApplyPage />} />
+            {/* Career Tech Domain Subpages */}
+            <Route path='/careers/fullstack' element={<CareersFullstack />} />
+            <Route path='/careers/data-analytics' element={<CareersDataAnalytics />} />
+            <Route path='/careers/devops' element={<CareersDevops />} />
+            <Route path='/careers/uiux' element={<CareersUiux />} />
+            <Route path='/careers/qa' element={<CareersQa />} />
+            <Route path='/careers/product' element={<CareersProduct />} />
+            <Route path='/cloud-devops-services' element={<CloudDevOpsServices />} />
+            <Route path="/software-development" element={<SoftwareDevelopment />} />
+            <Route path="/mobile-app-development" element={<MobileAppDevelopment />} />
+            <Route path="/web-development" element={<WebDevelopment />} />
+            <Route path="/it-consulting-support" element={<ITConsultingSupport />} />
+            <Route path="/cybersecurity-services" element={<CybersecurityServices />} />
+            <Route path="/digital-marketing-branding" element={<DigitalMarketingBranding />} />
+            <Route path="/data-analytics" element={<DataAnalytics />} />
+            <Route path="/ai-automation" element={<AiAutomation />} />
+          </Routes>
+        </Suspense>
       </>
     </QueryClientProvider>
   );

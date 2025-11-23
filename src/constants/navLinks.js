@@ -7,17 +7,16 @@ export const NavLinks = [
       // contentDescription: 'The path to 360° value starts here—featuring our most provocative thinking, extensive research and compelling stories of shared success.'
     },
     subLinks: [
-      { name: 'Cloud & DevOps Services', to: '' },
-      { name: 'Software Development', to: '' },
-      { name: 'Mobile App Development', to: '' },
-      { name: 'Web Development', to: '' },
-      { name: 'It Consulting & Support', to: '' },
-      { name: 'Cybersecurity Services', to: '' },
-      { name: 'Digital Marketing & Branding', to: '' },
-      { name: 'Data & Analytics', to: '' },
-      { name: 'Ai & Automation', to: '' },
-      { name: 'Training &b EdTech Services', to: '' },
-     
+      { name: 'Cloud & DevOps Services', to: '/cloud-devops-services' },
+      { name: 'Software Development', to: '/software-development' },
+      { name: 'Mobile App Development', to: '/mobile-app-development' },
+      { name: 'Web Development', to: '/web-development' },
+      { name: 'It Consulting & Support', to: '/it-consulting-support' },
+      { name: 'Cybersecurity Services', to: '/cybersecurity-services' },
+      { name: 'Digital Marketing & Branding', to: '/digital-marketing-branding' },
+      { name: 'Data & Analytics', to: '/data-analytics' },
+      { name: 'AI & Automation', to: '/ai-automation' },
+      // { name: 'Training & EdTech Services', to: '/training-edtech-services' },
     ]
   },
   {
