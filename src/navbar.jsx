@@ -26,7 +26,7 @@ const NavBar = ({ careers=false, login=false, job=false }) => {
   }
   
   return (
-    <div className="flex justify-between bg-white fixed top-0 left-0 items-center w-full px-4 h-16 shadow z-10">
+    <div className="flex justify-between bg-white fixed top-0 left-0 items-center w-full px-4 h-16 shadow z-50">
       <div className={ `flex items-center ${ width < 1024 && 'flex-row-reverse w-3/5 justify-between' }` }>
         <Link to='/' className="w-[6.3rem] mr-14">
           <img src={ logo } alt="Logo" className='object-cover mb-2' />
