@@ -72,7 +72,7 @@ const CustomDropdown = ({ twoColumn, data, levelled }) => {
             <div className='flex flex-col w-1/2'>
               <span className='text-lg mb-6 font-bold'>Industries</span>
               <ul className='flex flex-col gap-4'>
-                {console.log(data, 'data')}
+                {/* {console.log(data, 'data')} */}
                 {NavLinks.map((industry, idx) => (
                   <li key={idx} className='text-base font-normal'>
                     <span className='text-black'>{industry}</span>
